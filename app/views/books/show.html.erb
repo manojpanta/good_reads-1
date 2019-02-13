@@ -1,0 +1,7 @@
+<%= @book.title%>
+
+<p> Reviews </p>
+
+<%=@reviews.each do |r| %>
+<p><%=r.content%> by <%=r.user_id%></p>
+<%end%>
