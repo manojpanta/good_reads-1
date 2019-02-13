@@ -3,5 +3,5 @@
 <p> Reviews </p>
 
 <%=@reviews.each do |r| %>
-<p><%=r.content%> by <%=r.user_id%></p>
+<p><%=r.content%> by <%=r.user_id%> with rating: <%=r.rating%></p>
 <%end%>

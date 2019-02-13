@@ -32,6 +32,8 @@ describe 'visitor visiting book show ' do
     visit "/books/#{book1.id}"
 
     expect(page).to have_content(book1.title)
-    expect(page).to have_content("#{review.content} by #{user.id}")
+    expect(page).to have_content("#{review.content} by #{user.id} with rating: #{review.rating}")
+    expect(page).to have_content("")
+
   end
 end
