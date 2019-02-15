@@ -7,8 +7,11 @@
   <p><%=r.content%> by <%=r.user_id%> with rating: <%=r.rating%></p>
   <%end%>
   <p>Average rating: <%=@average_rating%></p>
-  <p>Highest rating: <%=@highest_rating%></p>
-  <p>Lowest rating: <%=@lowest_rating%></p>
 
-  <p><%=@review_with_highest_rating%> by <%=@reviewer_that_gave_highest_rating%></p>
+  <p>Highest rating: <%=@highest_rating%></p>
+  <p><%=@review_with_highest_rating%> by <%=@highest_reviewer%></p>
+
+  <p>Lowest rating: <%=@lowest_rating%></p>
+  <p><%=@review_with_lowest_rating%> by <%=@lowest_reviewer%></p>
+
 <%end%>

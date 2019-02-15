@@ -56,7 +56,7 @@ describe 'visitor visiting book show ' do
     visit "/books/#{book1.id}"
 
     expect(page).to have_content("Highest rating: #{review1.rating}")
-    # expect(page).to have_content("#{review1.content} by #{user.name}")
+    expect(page).to have_content("#{review1.content} by #{user.name}")
   end
 
   it ' shows lowest rating for the book' do
@@ -72,7 +72,7 @@ describe 'visitor visiting book show ' do
     visit "/books/#{book1.id}"
 
     expect(page).to have_content("Lowest rating: #{review3.rating}")
-    # expect(page).to have_content("#{review3.content} by #{user.name}")
+    expect(page).to have_content("#{review3.content} by #{user.name}")
   end
 
 
