@@ -1,17 +1,20 @@
+<center>
 <%= @book.title%>
 
-<p> Reviews </p>
-
+<p> Reviews(<%=@average_rating%>) </p>
 <% if @reviews %>
-  <%=@reviews.each do |r| %>
-  <p><%=r.content%> by <%=r.user_id%> with rating: <%=r.rating%></p>
+  <%@reviews.each do |r| %>
+  <p><%=r.content%> by <%=r.user.name%> with rating: <%=r.rating%></p>
   <%end%>
+
   <p>Average rating: <%=@average_rating%></p>
+  <br>
+  <br>
 
   <p>Highest rating: <%=@highest_rating%></p>
   <p><%=@review_with_highest_rating%> by <%=@highest_reviewer%></p>
-
+  <br>
+  <br>
   <p>Lowest rating: <%=@lowest_rating%></p>
-  <p><%=@review_with_lowest_rating%> by <%=@lowest_reviewer%></p>
-
+  <p><%=@review_with_lowest_rating%> by <%=@lowest_reviewer%></p></center>
 <%end%>

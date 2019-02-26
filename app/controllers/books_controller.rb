@@ -8,7 +8,6 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
 
     if !@book.reviews.empty?
-
       @reviews = @book.reviews
       @average_rating = @book.average_rating
       @highest_rating = @book.highest_rating

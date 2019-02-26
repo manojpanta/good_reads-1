@@ -25,9 +25,7 @@ describe 'visitor visiting book show ' do
     visit "/books/#{book1.id}"
 
     expect(page).to have_content(book1.title)
-    expect(page).to have_content("#{review.content} by #{user.id} with rating: #{review.rating}")
-    expect(page).to have_content("")
-
+    expect(page).to have_content("#{review.content} by #{user.name} with rating: #{review.rating}")
   end
 
   it ' shows average rating for the book' do
@@ -67,13 +65,10 @@ describe 'visitor visiting book show ' do
 
     review1 = book1.reviews.create(content: 'this is a review', rating: 4, user_id: user.id)
     review2 = book1.reviews.create(content: 'this is a review', rating: 3, user_id: user.id)
-    review3 = book1.reviews.create(content: 'this is a review', rating: 1, user_id: user.id)
 
-    visit "/books/#{book1.id}"
+    visit "/books/#{book1.id}"    
 
-    expect(page).to have_content("Lowest rating: #{review3.rating}")
-    expect(page).to have_content("#{review3.content} by #{user.name}")
+    expect(page).to have_content("Lowest rating: #{review2.rating}")
+    expect(page).to have_content("#{review2.content} by #{user.name}")
   end
-
-
 end
